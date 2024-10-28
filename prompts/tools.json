@@ -1,0 +1,74 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "create_problem",
+            "description": "Creates a new problem. This tool will then return the new problem's ID, and then automatically read the newly created problem for you (so that you don't need to do it again).",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "topic": {
+                        "type": "string",
+                        "description": "A topic for the problem (usually a question) which summarizes it."
+                    }
+                },
+                "required": ["topic"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "read_problem",
+            "description": "Reads a problem. This tool will then read the problem for you.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The problem's ID."
+                    }
+                },
+                "required": ["id"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "edit_problem",
+            "description": "Edits a problem. This tool will then replace the entire existent content with your new content.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The problem's ID."
+                    },
+                    "content": {
+                        "type": "string",
+                        "description": "The content that you want the old content to be replaced to."
+                    }
+                },
+                "required": ["id", "content"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "respond",
+            "description": "Responds to user, giving the conversation back to user's control.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "description": "The message to user."
+                    }
+                },
+                "required": ["message"]
+            }
+        }
+    }
+]
